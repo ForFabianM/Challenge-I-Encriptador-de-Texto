@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/*Variables*/
+:root {
+	--color-fondo: #F3F5FC;
+	--color-fondo2: #D8DFE8;
+	--color-azul: #0A3871;
+	--color-gris: #495057;
+	--color-gris2: #343A40;
+
+	--fuente: 'Inter', sans-serif;
+}
+
+/*Configuracíon General*/
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	letter-spacing: 1px;
+	line-height: 1.3;
+	font-family: var(--fuente);
+	text-decoration: none;
+}
+body {
+	background: var(--color-fondo);
+}
+button{
+	cursor: pointer;
+}
+
+/*Configuracion de Encabezado*/
+header {
+	width: 100%;
+}
+.header__principal{
+	display: flex;
+	flex-wrap: wrap;
+	align-content: flex-end;
+	height: 80px;
+}
+.header__secundario {
+	width: 90%;
+	height: auto;
+	margin: auto;
+	display: flex;
+	align-items: center;
+	gap: .5em;
+}
+.logo__alura{
+	max-height: 45px;
+	height: 100%;
+	min-height: 40px;
+}
+
+/*Configuración Ingreso y Salida de Texto*/
+.herramienta {
+	margin: auto 40px auto auto;
+	width: 90%;
+	align-items: end;
+	min-height: calc(100vh - 80px - 56px);
+	display: grid;
+	padding: 1rem;
+	grid-template-columns: 2.5fr 1fr;
+	gap: 1rem;
+}
+/*Texto de ingreso*/
+.seccion__ingreso {
+	width: 100%;
+	/* height: 100%; */
+	height: 92%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.ingreso__texto {
+	width: 100%;
+	max-height: 350px;
+	min-height: 50px;
+	background: transparent;
+	border: none;
+	outline: none;
+	resize: none;
+	font-size: 32px;
+	color: var(--color-azul);
+	font-family: var(--fuente)
+}
+textarea::placeholder {
+	color: var(--color-azul);
+}
+.contenido_botones {
+	min-height: 80px;
+}
+.informacion {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	text-align: center;
+	font-size: 16px;
+	color: var(--color-gris);
+}
+.botones {
+	display: flex;
+	justify-content: space-evenly;
+	padding: .8rem;
+	flex-wrap: wrap;
+	gap: .8rem;
+}
+.boton__encriptar,
+.boton__desencriptar,
+.boton__copiar {
+	width: 45%;
+	max-width: 328px;
+	min-width: 160px;
+	height: 67px;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 24px;
+	border: none;
+	outline: 1px solid var(--color-azul);
+	background: var(--color-azul);
+	color: white;
+}
+.boton__desencriptar {
+	background: var(--color-fondo2);
+	color: var(--color-azul);
+}
+.boton__copiar{
+	background: none;
+	color: var(--color-azul);
+	width: 100%;
+	min-width: 100px;
+}
+.bn_ocultar {
+	display: none;
+}
+/*Texto de Salida*/
+.seccion__salida {
+	align-items: center;
+	width: 100%;
+	/* height: 100%; */
+	height: calc(100% + 60px);
+	background: white;
+	border-radius: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: 16px;
+	gap: 32px;
+	box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+}
+.ajuste{
+	justify-content: space-between;
+}
+.dibujo{
+	min-width: 230px;
+	width: 50%;
+}
+.ocultar{
+	display: none;
+}
+.texto__final{
+	width: 100%;
+	font-size: 24px;
+	color: var(--color-gris2);
+	border: none;
+	outline: none;
+	text-align: center;
+	overflow: hidden;
+	resize: none;
+	pointer-events: none;
+	font-family: var(--fuente);
+}
+.texto__final::placeholder{
+	color: var(--color-gris2);
+}
+.ajustar {
+	height: auto;
+	min-height: calc(100% - 67px - 32px);
+	pointer-events: all;
+	text-align: left;
+	overflow: auto;
+}
+
+/*Configuración Responsiva*/
+@media screen and (max-width: 840px) {
+	.herramienta {
+		grid-template-columns: 1fr;
+		grid-template-rows: 65% auto;
+		margin: auto;
+	}
+	.ingreso__texto{
+		max-height: 270px;
+		font-size: 26px;
+	}
+	.informacion{
+		font-size: 12px;
+	}
+	.seccion__salida{
+		height: 100%;
+	}
+	.seccion__salida.ajustar {
+		height: 100%;
+	}
+	.dibujo{
+		display: none;
+	}
+	.texto__final{
+		font-size: 18px;
+	}
+}
+@media screen and (max-width: 440px){
+	.boton__encriptar,
+	.boton__desencriptar,
+	.boton__copiar {
+		width: 100%;
+		height: 50px;
+		border-radius: 19px;
+		font-size: 14px;
+	}
+	.ingreso__texto{
+		max-height: 200px;
+		font-size: 20px;
+	}
+	.informacion{
+		font-size: 10px;
+	}
+	.texto__final{
+		font-size: 16px;
+	}
+}
+@media screen and (max-width: 230px) {
+	.boton__encriptar,
+	.boton__desencriptar,
+	.boton__copiar {
+		width: 100%;
+		min-width: 100%;
+		height: 40px;
+		border-radius: 15px;
+		font-size: 12px;
+	}
+}
